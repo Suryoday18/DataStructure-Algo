@@ -1,0 +1,3 @@
+Traversing to each and every element
+Breadth First Search: Starting with the first element, and going to the next line,doing the same for each and every line
+Depth First Search: Starting with lowermost left node and go to its root and then come down to right, thats how you cover the whole node and its children then move to its parent, then move to right bottom left, then again repat the whole process

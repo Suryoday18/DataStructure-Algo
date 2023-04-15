@@ -1,0 +1,58 @@
+BIG O - is a way of measuring how effecient your code is
+Big O notation is a fundamental tool used to find out the time complexity of an algorithm.
+Big O Notation allows programmers to classify algorithms depending on how their run time or space requirements vary as the input size varies.
+
+Omega - Best Case
+Thita - Average Case
+Omicron - Big O - Worst Case
+ There is no Best case of Big O - When we are measuring Big O - We are measuring worst case.
+ 
+ Big O(n) - Measurement is in linear - checking each and every test cases -linear
+ 
+ for(let i=0; i<n; i++){
+ console.log(n)
+ }
+ 
+ Big O(n^2) - for(let i=0; i<n^2; i++){
+ 		for(let j=0; j<n; j++){
+ 		   console.log(i, j)
+ 		}
+ 	      }	
+ 	      - loop within the loop
+ 
+ drop non-dominants - O(n^2) + O(n) = O(n^2)
+ 
+ Big O(1) - constant -  const addItems = (n) => n + n only performs one operation always despite of any n value. 
+ This is the most effecient operation. Most effecient. - Constant time operation - that phrase represents constant time operation
+ 
+ Big O(logn) - Divide and conquer - Given Nos are - 1,2,3,4,5,6,7,8,9 - (1-4) & (4-9) || (1 to 4) -> (1-2) -> 1 answer 
+ How many times to cut down the half of the number to get the one item - 
+ 
+ Differents terms for inputs: 
+ for(let i=0; i<a; i++){
+ console.log(a)
+ }
+ for(let i=0; i<b; i++){
+ console.log(b)
+ }
+ Big O(a*b)
+ If you access things by index, Array is the great ds by choice. As it has O(1) for searching the elements by indexing.
+ If you are adding or removing the elements from beginging, array is not a good choice for you.
+ 
+ Pointers: 
+ let num1 = 5
+ let num2 = num1
+ if we change the num1 = 10, num2 doesnot change.
+ num2 = 5. thats the problem and we use pointers
+ let obj1 = {value: 11}
+ let obj2 = obj1 
+ obj1.value = 22
+ obj2 = {value: 11}
+ this is how the pointers work.
+
+ Linked Lists: Taking Array, and remove thier indexes
+ Linked also have the variable called Heads that points to the first item and tails that points to the last item.
+ Each item in the link list points to the next, points to the next and the last item points to the null.
+ Array is continigus place in the memory whereas linklist can take any random places in the memory
+
+Hum While generally use tbhi krte hain jb hme pta nhi rhta ki kitni baar iterate krna hai 

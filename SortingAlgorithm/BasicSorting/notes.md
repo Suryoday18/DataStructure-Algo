@@ -1,0 +1,1 @@
+all three have O(1) space complexity as  they do not create additional copies of the array.
