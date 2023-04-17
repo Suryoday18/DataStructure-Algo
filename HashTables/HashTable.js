@@ -1,5 +1,51 @@
-//An object {nail: 1000} will pass through the Hash generator function and it will assign the object to any memory.
-// Two Characterstics of the Hash Generator: 
-// 1. One-way: with the assigned address, you can't get back the object
-// 2. Deterministic: It will assign the same address for the one given object, if {nail: 1000} -> 2 same for {nail: 1000} -> 2
-//Collissions: Two values in the same spot of the memory 
+class HashTable {
+    constructor(size = 7){ //if you dont pass anything, the default value is 7 in it.
+        this.dataMap = new Array(size)
+    }
+    _hash(key){
+        let hash = 0
+        for(let i=0; i<key.length; i++){
+            hash = (hash + key.charCodeAt(i) * 23) % this.dataMap.length
+        }
+        return hash
+    }
+
+    set(key, value){
+        let index = this._hash(key)
+        if(!this.dataMap[index]){
+            this.dataMap[index] = []
+        }
+        this.dataMap[index].push([key, value])
+        return this
+    }
+
+    get(key){
+        let index = this._hash(key)
+        if(this.dataMap[index]){
+            for(let i=0; i<this.dataMap[index].length; i++){
+                if(this.dataMap[index][i][0] === key){
+                    return this.dataMap[index][i][1]
+                }
+            }
+        }
+        return undefined
+    }
+
+    keys(){
+        let allKeys = []
+        for(let i=0; i<this.dataMap.length; i++){
+            if(this.dataMap[i]){
+                for(let j=0; j<this.dataMap[i].length; j++){
+                    allKeys.push(this.dataMap[i][j][0])
+                }
+            }
+        }
+        return allKeys
+    }
+
+}
+let myHashTable = new HashTable()
+myHashTable.set('lumber', 70)
+myHashTable.set('washers', 50)
+myHashTable.set('bolts', 1400)
+console.log(myHashTable.keys());
